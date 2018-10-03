@@ -53,7 +53,7 @@ public class noir
         p2.capture(1, playboard, p1, p3, p4, d1);
         p3.capture(2, playboard, p2, p1, p4, d1);
         p4.capture(3, playboard, p2, p3, p1, d1);
-
+//pizza pizza
     }
 
 }
