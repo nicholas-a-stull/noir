@@ -54,6 +54,8 @@ public class noir
         p3.capture(2, playboard, p2, p1, p4, d1);
         p4.capture(3, playboard, p2, p3, p1, d1);
 //pizza pizza
+        //pizza pizza
+        //froggo
     }
 
 }
