@@ -1,3 +1,5 @@
+
+
 public class noir
 {
 
@@ -18,6 +20,7 @@ public class noir
 
         char p4card = d1.draw();
         player p4 = new player(p4card, 4);
+
 
         System.out.print(p1.character);
         System.out.print(" ");

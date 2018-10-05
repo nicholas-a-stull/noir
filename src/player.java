@@ -17,11 +17,23 @@ public class player {
         b.move(row, upleft, a);
     }
 
+    public boolean attackSub(int r, int c, deck d, boardtwo k, int row, int col, player j)
+    {
+        k.board[col - c][row - r] = 'z';
+        j.character = d.draw();
+        points++;
+        System.out.println("hit");
+        return true;
+    }
 
-
-
-
-
+    public boolean attackAdd(int r, int c, deck d, boardtwo k, int row, int col, player j)
+    {
+        k.board[col + c][row + r] = 'z';
+        j.character = d.draw();
+        points++;
+        System.out.println("hit");
+        return true;
+    }
 
     public boolean capture(int dir, boardtwo k, player a, player b, player c, deck d)
     {
@@ -49,27 +61,15 @@ public class player {
 
             if(k.board[col][row - 1] == a.character)
             {
-                k.board[col][row - 1] = 'z';
-                a.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                attackSub(1,0, d, k, row, col, a);
             }
             else if(k.board[col][row - 1] == b.character)
             {
-                k.board[col][row - 1] = 'z';
-                b.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                attackSub(1,0, d, k, row, col, b);
             }
             else if(k.board[col][row - 1] == c.character)
             {
-                k.board[col][row - 1] = 'z';
-                c.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                attackSub(1,0, d, k, row, col, c);
             }
             else
             {
@@ -88,27 +88,15 @@ public class player {
 
             if(k.board[col - 1][row] == a.character)
             {
-                k.board[col - 1][row] = 'z';
-                a.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackSub(0,1, d, k, row, col, a);
             }
             else if(k.board[col - 1][row] == b.character)
             {
-                k.board[col - 1][row] = 'z';
-                b.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackSub(0,1, d, k, row, col, b);
             }
             else if(k.board[col - 1][row] == c.character)
             {
-                k.board[col - 1][row] = 'z';
-                c.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackSub(0,1, d, k, row, col, c);
             }
             else
             {
@@ -126,27 +114,15 @@ public class player {
 
             if(k.board[col][row + 1] == a.character)
             {
-                k.board[col][row + 1] = 'z';
-                a.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackAdd(1,0, d, k, row, col, a);
             }
             else if(k.board[col][row + 1] == b.character)
             {
-                k.board[col][row + 1] = 'z';
-                b.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackAdd(1,0, d, k, row, col, b);
             }
             else if(k.board[col][row + 1] == c.character)
             {
-                k.board[col][row + 1] = 'z';
-                c.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackAdd(1,0, d, k, row, col, c);
             }
             else
             {
@@ -164,27 +140,15 @@ public class player {
 
             if(k.board[col + 1][row] == a.character)
             {
-                k.board[col + 1][row] = 'z';
-                a.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackAdd(0,1, d, k, row, col, a);
             }
             else if(k.board[col + 1][row] == b.character)
             {
-                k.board[col + 1][row] = 'z';
-                b.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackAdd(0,1, d, k, row, col, b);
             }
             else if(k.board[col + 1][row] == c.character)
             {
-                k.board[col + 1][row] = 'z';
-                c.character = d.draw();
-                points++;
-                System.out.println("hit");
-                return true;
+                return attackAdd(0,1, d, k, row, col, c);
             }
             else
             {
@@ -193,15 +157,8 @@ public class player {
             }
         }
         else return false;
+        return false;
     }
-
-
-
-
-
-
-
-
 
     public void canvas(int dir, boardtwo k, player a, player b, player c, deck d)
     {
